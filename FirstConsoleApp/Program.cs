@@ -4,6 +4,8 @@ using System.Threading;
 
 namespace FirstConsoleApp
 {
+    // Главная программа
+
     class Program
     {
         static void Main(string[] args)
