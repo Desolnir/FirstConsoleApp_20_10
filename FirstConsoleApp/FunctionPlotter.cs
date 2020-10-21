@@ -27,6 +27,22 @@ namespace FirstConsoleApp
             }
         }
 
+        public static void PrintTable(Func<double, double> f, double Xmin, double Xmax, double dx)
+        {
+            double x = Xmin;
+
+            Console.WriteLine("    x    |     y");
+            Console.WriteLine("-----------------------");
+            while (x < Xmax)
+            {
+                double y = f(x);
+
+                Console.WriteLine($"{x,8:f3} | {y,7:f5}");
+
+                x += dx;
+            }
+        }
+
         public static double GetIntegral(double a, double b, double dx)
         {
             double s = 0;

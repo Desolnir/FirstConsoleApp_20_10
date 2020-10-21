@@ -38,6 +38,8 @@ namespace FirstConsoleApp
 
             Console.WriteLine("Интеграл равен {0}", integral);
 
+            FunctionPlotter.PrintTable(x => Sinc(2 * Math.PI * x), -3, 3, 0.1);
+
             Console.ReadLine();
         }
     }
