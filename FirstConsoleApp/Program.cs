@@ -4,13 +4,11 @@ namespace FirstConsoleApp
 {
     class Program
     {
-        static double Sinc(double x)
+        public static double Sinc(double x)
         {
             if (x == 0) return 1;
             return Math.Sin(x) / x; //double.NaN;
         }
-
-
 
         static void Main(string[] args)
         {
@@ -26,26 +24,7 @@ namespace FirstConsoleApp
             string dx_string = Console.ReadLine();
             double dx = double.Parse(dx_string);
 
-            double x = x_min;
-
-            Console.WriteLine("    x    |     y");
-            Console.WriteLine("-----------------------");
-            while (x < x_max)
-            {
-                double y = Sinc(x);
-
-                //Console.Write(x);
-                //Console.Write("  |  ");
-                //Console.Write(y);
-
-                //Console.WriteLine();s
-
-                //Console.WriteLine(x + "  |  " + y);
-                //Console.WriteLine("{0:f3}  |  {1:f5}", x, y);
-                Console.WriteLine($"{x,8:f3} | {y,7:f5}");
-
-                x += dx;
-            }
+            FunctionPlotter.PrintTable(x_min, x_max, dx);
 
             Console.ReadLine();
         }
