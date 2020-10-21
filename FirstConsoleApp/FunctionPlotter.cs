@@ -26,5 +26,24 @@ namespace FirstConsoleApp
                 x += dx;
             }
         }
+
+        public static double GetIntegral(double a, double b, double dx)
+        {
+            double s = 0;
+
+            double x = a;
+
+            while (x < b)
+            {
+                double y = Program.TestFunction(x);
+                double ds = y * dx;
+
+                x = x + dx;
+                s += ds;
+            }
+
+            return s;
+        }
+        
     }
 }
