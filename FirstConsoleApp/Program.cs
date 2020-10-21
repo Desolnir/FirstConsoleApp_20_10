@@ -30,7 +30,11 @@ namespace FirstConsoleApp
 
             //FunctionPlotter.PrintTable(x_min, x_max, dx);
 
-            double integral = FunctionPlotter.GetIntegral(0, 1, 0.0001);
+            // f(x) = 3 * cos(2 * PI * x)
+            double integral = FunctionPlotter.GetIntegral(
+                x => 3 * Math.Cos(2 * Math.PI * x), 
+                0, 0.25,
+                0.0001);
 
             Console.WriteLine("Интеграл равен {0}", integral);
 

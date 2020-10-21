@@ -44,6 +44,25 @@ namespace FirstConsoleApp
 
             return s;
         }
-        
+
+        public static double GetIntegral(Func<double, double> f, double a, double b, double dx)
+        {
+            //Func<string, int> get_length;
+
+            double s = 0;
+
+            double x = a;
+
+            while (x < b)
+            {
+                double y = f(x);
+                double ds = y * dx;
+
+                x = x + dx;
+                s += ds;
+            }
+
+            return s;
+        }
     }
 }
